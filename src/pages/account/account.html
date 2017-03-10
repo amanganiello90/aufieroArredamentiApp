@@ -1,0 +1,67 @@
+<ion-header >
+  <ion-navbar color="navbar">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><p color="white">Crea Account</p></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+  <div class="login-box">
+    
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+             <ion-item>
+              <ion-input type="text" placeholder="Nome" name="nome" [(ngModel)]="registerCredentials.nome" required></ion-input>
+            </ion-item>
+
+            
+             <ion-item>
+              <ion-input type="text" placeholder="Cognome" name="cognome" [(ngModel)]="registerCredentials.cognome" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Indirizzo" name="indirizzo" [(ngModel)]="registerCredentials.indirizzo" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Regione" name="regione" [(ngModel)]="registerCredentials.regione" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Città" name="città" [(ngModel)]="registerCredentials.citta" required></ion-input>
+            </ion-item>
+
+             <ion-item>
+              <ion-input type="text" placeholder="Codice Fiscale" name="codice fiscale" pattern="/^[A-Z0-9]{16}$/" [(ngModel)]="registerCredentials.cf" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Nome Utente" name="nome utente" [(ngModel)]="registerCredentials.nomeUtente" required></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Registrati!</button>
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div>
+</ion-content>
